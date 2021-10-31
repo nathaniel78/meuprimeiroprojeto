@@ -4,13 +4,13 @@ from .models import Person
 from .forms import PersonForm
 
 # List
-#@login_required
+@login_required
 def persons_list(request):
     persons = Person.objects.all()
     return render(request, 'person.html', {'persons': persons})
 
 # New
-#@login_required
+@login_required
 def persons_new(request):
     form = PersonForm(request.POST or None, request.FILES or None)
 
@@ -20,7 +20,7 @@ def persons_new(request):
     return render(request, 'person_form.html', {'form': form})
 
 # Update
-#@login_required
+@login_required
 def persons_update(request, id):
     person = get_object_or_404(Person, pk=id)
     form = PersonForm(request.POST or None, request.FILES or None, instance=person)
@@ -32,7 +32,7 @@ def persons_update(request, id):
     return render(request, 'person_form.html', {'form': form})
 
 # Delete
-#@login_required
+@login_required
 def persons_delete(request, id):
     person = get_object_or_404(Person, pk=id)
 
