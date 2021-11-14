@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-l1m$687vm4#3#$xw7ms9_ctfrtov+kaqn=n5c%2m)=-iok$wnx
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['projetofinalam.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['localhost']
 
 # Application definition
 
@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'clientes',
+    'home',
 ]
 
 MIDDLEWARE = [
@@ -120,6 +121,8 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = 'media'
 
 LOGIN_URL = '/login/'
+
+LOGIN_REDIRECT_URL = 'persons_list'
 
 STATICFILES_DIRS = [
     'statics',
